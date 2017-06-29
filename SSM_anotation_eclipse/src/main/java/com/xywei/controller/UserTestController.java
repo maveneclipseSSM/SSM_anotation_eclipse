@@ -19,7 +19,8 @@ public class UserTestController {
 		User user = userTestService.findUser(username, password);
 		System.out.println(user);
 		model.addAttribute("user", user);
-		return "welcome";
+//		return "welcome";
+		return "welcome1";
 	}
 
 }
