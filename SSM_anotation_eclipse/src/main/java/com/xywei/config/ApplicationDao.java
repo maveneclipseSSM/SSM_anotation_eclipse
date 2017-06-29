@@ -17,6 +17,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
+import com.xywei.exception.ExceptionDeal;
+
 @Configuration
 @EnableTransactionManagement
 @PropertySource(value = { "classpath:jdbc.properties" })
@@ -91,6 +93,12 @@ public class ApplicationDao implements TransactionManagementConfigurer {
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertyconfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
+	}
+
+	@Bean
+	public ExceptionDeal exceptiondDeal() {
+		ExceptionDeal exceptionDeal = new ExceptionDeal();
+		return exceptionDeal;
 	}
 
 	@Override
